@@ -1,0 +1,338 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    box-sizing: border-box;  
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: chocolate;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.img{
+    max-width: 100%;
+    width:100%;
+}
+
+.container{
+    max-width: 1200px;
+    margin:5rem auto;
+    
+    box-shadow: 0 2rem 6rem rgba(0,0,0,0.5);
+}
+
+.content{
+    display: flex;
+
+}
+
+
+.sidebar{
+    background-color: rgb(8, 8, 8);
+    flex:0 0 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+   
+}
+    
+
+.side-nav{
+    font-size: 1rem;
+   list-style: none;
+   margin-top: 3rem;
+}
+
+.sidenav__item{
+    position: relative;
+    margin-right: 1rem;
+  
+}
+
+
+.sidenav__item::before{
+     content: "";
+     position: absolute;
+     top:0;
+     left:0;
+     height:100%;
+     width:3px;
+     background-color: chocolate;
+     transform: scaleY(0);
+     transition: transform .2s, width .4s cubic-bezier(1,0,0,1) .2s;
+}
+
+
+.sidenav__item:hover::before,
+.sidenav__item--active::before{
+    transform: scaleY(1);
+    width:100%;
+}
+
+.side-nav__icon{
+    width:2rem;
+    height:2rem;
+    fill:#ccc;
+    
+    margin-right: 1.5rem;
+}
+
+.sidenav__link:link,
+.sidenav__link:visited{
+    color:#ccc;
+    position: relative;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    margin: .3rem;
+    display:block;
+    display:flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.footer{
+    color:#ccc;
+    text-align: center;
+    padding: 13px;
+    font-size: 14px;
+}
+
+.music-view{
+   
+    background: linear-gradient(to right bottom, rgba(0,0,0,0.5),rgba(0,0,0,0.8)),url(./img/background.jpg) no-repeat  ;
+    background-position: center;
+    flex:1;
+   
+}
+.photo{
+    width:170px;
+    height:120px;
+}
+.music-item{
+    padding: 1.7rem;
+    color: #ccc;
+    display: flex;
+    background-color: rgb(27, 26, 26);
+    border-bottom: 1px solid chocolate;
+    justify-content: space-evenly;
+}
+
+.music-heading{
+    font-size: 2rem;
+    font-family: tahoma;
+    font-weight: 500;
+    margin-bottom: .4rem;
+}
+
+.rating__icon{
+    width:.9rem;
+    height:.9rem;
+    margin-top: .5rem;
+    fill:rgb(214, 137, 37)
+}
+
+.rate__list{
+    display: flex;
+    flex-direction: row;
+}
+
+.rate__group{
+    list-style: none;
+}
+
+//////////////////// MAIN VIEW
+
+.main-view{
+   margin-top: 2rem;
+  
+}
+
+.music-lists{
+  
+    list-style: none;
+
+    flex: 1 0 auto;
+    padding:4rem 3rem;
+}
+
+.list {
+    color:gainsboro;
+     padding: 0 20px;
+    display:flex;
+    min-height: 50px;
+}
+
+.list p{
+    flex:0 0 25%;
+}
+
+.list span.catty-cloud { 
+   
+   font-size: 0.6em; 
+    padding: 3px;
+}
+
+.list:hover,
+.list--active{
+    color:chocolate;
+}
+
+.play-list{
+    background-color: chocolate;
+    border-bottom: 2px solid black;
+}
+
+.play__item{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.group__icon{
+     height:3rem;
+     width:3rem;
+     fill:black;
+     margin:0 1.5rem;
+}
+  
+
+@media  (max-width:808px){
+    .container{
+        margin:0 auto;
+      
+    }
+    
+.side-nav__icon{
+    width:.8rem;
+    height:.8rem;
+    fill:#ccc;
+    
+    margin-right: .5rem;
+}
+
+.sidenav__link:link,
+.sidenav__link:visited{  
+    padding: .7rem .7rem;
+   
+}
+ 
+.sidenav__item{
+    font-size:12px;
+    margin-right: .3rem;
+  
+}
+
+ .footer{
+     font-size: 11px;
+ }
+
+
+.music-item{
+    padding: .5rem;
+    
+}
+
+.music-heading{
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+ 
+
+.main-view{
+    margin-top: .5rem;
+ }
+ 
+ .music-lists{
+     padding:10px 10px;
+     margin:0 auto;
+ }
+ 
+ .list {
+      font-size: 12px;
+      padding: 0 13px;
+     min-height: 35px;
+ }
+ 
+ .list p{
+     flex:0 0 20%;
+     margin-left:1rem;
+ }
+ 
+ .list span.catty-cloud { 
+   
+   font-size: 8px;  
+}
+ .photo{
+     width:100px;
+     height:70px;
+ }
+}
+
+@media (max-width:600px){
+ 
+.content{
+   
+    flex-direction: column;
+   
+}
+
+
+.side-nav{
+  display: flex;
+   margin-top:0;
+   font-size: .7rem;
+}
+.sidenav__item{
+    margin-right: 0;
+}
+  .footer{
+      display: none;
+  } 
+    .music-lists{
+        margin-left: 0;
+    }
+    .group__icon{
+        width:1rem;
+        height:1rem;
+    }
+   
+    .photo{
+        width:90px;
+        height:70px;
+        margin-top: 1rem;
+    }
+
+    .music-lists{
+  
+        margin-right: 0;
+        padding:2rem 1rem;
+    }
+    
+    .list {
+        color:gainsboro;
+         padding: 0 10px;
+        display:flex;
+        min-height: 60px;
+    }
+    
+    .list p{
+        flex:0 0 21%;
+    }
+    
+    .list span.catty-cloud { 
+       
+       font-size: 0.4em; 
+        padding: 0;
+    }
+    
+}
